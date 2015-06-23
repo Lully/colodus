@@ -1,4 +1,4 @@
-function auth(login, pwd){jQuery('#login').val(login);jQuery('#pass').val(pwd)"/>");jQuery('#boutonlog').click();};
+function auth(login, pwd){jQuery('#login').val(login);jQuery('#pass').val(pwd);jQuery('#boutonlog').click();};
 
 # SearchPPN : chercher un PPN
 function SearchPPN(ppn) {
