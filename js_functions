@@ -59,7 +59,8 @@ function SupprimerEx()
 		var Ex = jQuery('#TabListeExpl tbody tr');
 		var NbEx = Ex.length;
 		var i = 0;
-		while (i &lt; NbEx) 
+// Dans un bookmarklet, le caractère < doit être écrit &lt;. Si c'est un fichier de fonctions qu'on importe, il faut conserver le <
+		while (i < NbEx) 
 			{ jQuery('#supexpl').click(); jQuery('button:contains("Supprimer")')[0].click(); i++; }
 	}
 
