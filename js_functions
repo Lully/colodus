@@ -1,15 +1,15 @@
 function auth(login, pwd){jQuery('#login').val(login);jQuery('#pass').val(pwd);jQuery('#boutonlog').click();};
 
-# SearchPPN : chercher un PPN
+// SearchPPN : chercher un PPN
 function SearchPPN(ppn) {
 var ppn;
 jQuery("input[id*='ppn']").val(ppn);
 document.getElementById('boutonsearch').click();}
 
-#creerEx() : cliquer sur le bouton "Créer un nouvel exemplaire"
+// creerEx() : cliquer sur le bouton "Créer un nouvel exemplaire"
 function CreerEx() {document.getElementById('boutoncrexpl').click();}
 
-#FormExemplaire() : cliquer sur le bouton "Créer un nouvel exemplaire" + alimenter les champs N° inv, CB, Bib, 
+// FormExemplaire() : cliquer sur le bouton "Créer un nouvel exemplaire" + alimenter les champs N° inv, CB, Bib, 
 #localisation, cote, règle de PEB
 function FormExemplaire(inv,barcode,BU,loc,cote,PEB) {
 var inv;
@@ -38,7 +38,7 @@ jQuery("select[id*='E930_j']").val(PEB);
 jQuery('#boutonsave').click();
 }
 
-#L035 : pour un PPN donné, ajouter un champ L035 préfixé ALP + n° de notice (Aleph)
+// L035 : pour un PPN donné, ajouter un champ L035 préfixé ALP + n° de notice (Aleph)
 function L035(NoAlp){
 var NoAlp;
 var champAlp = 'L035 ##$aALP' +  NoAlp;
@@ -46,14 +46,14 @@ document.getElementById('boutonCreloc').click();
 document.getElementsByTagName('textarea')[0].value=champAlp;
 }
 
-#EnregistrerDonneesLoc : Cliquer sur le bouton "Enregistrer"
+// EnregistrerDonneesLoc : Cliquer sur le bouton "Enregistrer"
 function EnregistrerDonneesLoc(){jQuery('button:contains("Enregistrer")').click();}
 
-#Annuler : certaines manip (not. création de données locales) génèrent des surimpressions de <div> 
+// Annuler : certaines manip (not. création de données locales) génèrent des surimpressions de <div> 
 #et de boutons "Enregistrer/Annuler". Cette fonction, mise à la fin des traitements, les efface tous
 function Annuler() {jQuery('button:contains("Annuler")').click();}
 
-#SupprimerEx : pour un PPN donné, supprimé tous les exemplaires d'un RCR quand i=0 (si i=1, garde un  exemplaire)
+// SupprimerEx : pour un PPN donné, supprimé tous les exemplaires d'un RCR quand i=0 (si i=1, garde un  exemplaire)
 function SupprimerEx()
 	{
 		var Ex = jQuery('#TabListeExpl tbody tr');
@@ -63,10 +63,10 @@ function SupprimerEx()
 			{ jQuery('#supexpl').click(); jQuery('button:contains("Supprimer")')[0].click(); i++; }
 	}
 
-#EditerExParCB : identifier dans la liste des exemplaires celui qu'on veut modifier, par son CB
+// EditerExParCB : identifier dans la liste des exemplaires celui qu'on veut modifier, par son CB
 function EditerExParCB(CB){jQuery('tr:contains(CB) td a.option_editer').click();}
 
-#Recotation  : dans la foulée de la fonction précédente : modifie les champs Cote et localisation puis enregistre
+// Recotation  : dans la foulée de la fonction précédente : modifie les champs Cote et localisation puis enregistre
 function Recotation(cote,codeLocalisation){
 jQuery("input[id*='E930_a']").val(cote);
 jQuery("input[id*='E930_d']").val(codeLocalisation);
