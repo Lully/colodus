@@ -1,0 +1,50 @@
+/*1. Création de 3 exemplaires + L035 sous 3 PPN*/
+javascript:/*ColSJA-06/10/15*/function auth(){jQuery('#login').val("050CX52");jQuery('#pass').val("colNABC");jQuery('#boutonlog').click();};function SearchPPN(ppn) {var ppn;jQuery(%22input[id*='ppn']%22).val(ppn);document.getElementById('boutonsearch').click();};function CreerEx() {document.getElementById('boutoncrexpl').click();};function FormExemplaire(inv,barcode,BU,loc,cote,PEB) {var inv;var barcode;var BU;var loc;var cote;var PEB;document.getElementById('boutoncrexpl').click();divparent=window.document.getElementById('E9xx');divparent3XX=window.document.getElementById('E3xx');div930=divparent.getElementsByClassName('E930_Div');divid930=div930[0].getAttribute('id');ajLt('record0','E915',null,null,null,null,null,null,null);div915=divparent.getElementsByClassName('E915_Div');divid915=div915[0].getAttribute('id');jQuery(%22input[id*='E915_a']%22).val(inv);ajt('record0','E915_b',null,divid915,null,null,null,null,null);jQuery(%22input[id*='E915_b']%22).val(barcode);ajt('record0','E930_c',null,divid930,null,null,null,null,null);jQuery(%22input[id*='E930_c']%22).val(BU);ajt('record0','E930_d',null,divid930,null,null,null,null,null);jQuery(%22input[id*='E930_d']%22).val(loc);jQuery(%22input[id*='E930_a']%22).val(cote);jQuery(%22select[id*='E930_j']%22).val(PEB);jQuery('#boutonsave').click();};function L035(NoAlp){var NoAlp;var champAlp = 'L035%20##$aALP' +  NoAlp;document.getElementById('boutonCreloc').click();document.getElementsByTagName('textarea')[0].value=champAlp;};function EnregistrerDonneesLoc(){jQuery('button:contains(%22Enregistrer%22)').click();};function Annuler() {jQuery('button:contains(%22Annuler%22)').click();}
+if (/colodus.sudoc.fr/.test(window.location.href)) 
+  {
+  if (jQuery('div#messConnect').text().length != 0) {location.reload();}
+  else { 
+	auth();
+	SearchPPN("185829538"); if (!jQuery('#listeExpl table tbody tr')[0]) FormExemplaire("2015-SJA-580","0962091260","SJA","ECO","333.7 MER","u");
+	SearchPPN("185668046"); if (!jQuery('#listeExpl table tbody tr')[0]) FormExemplaire("2015-SJA-545","0962091192","SJA","ECO","334.906 4 MAI","u");
+	SearchPPN("183909941"); if (!jQuery('#listeExpl table tbody tr')[0]) FormExemplaire("2015-SJA-546","0962091215","SJA","ECO","338.88 BAS","u");
+	SearchPPN("185829538"); if (document.getElementById('boutonCreloc')) {L035("000359094");EnregistrerDonneesLoc();}
+	SearchPPN("185668046"); if (document.getElementById('boutonCreloc')) {L035("000359112");EnregistrerDonneesLoc();}
+	SearchPPN("183909941"); if (document.getElementById('boutonCreloc')) {L035("000359143");EnregistrerDonneesLoc();};
+	Annuler();
+	}
+  }
+  else {window.location.href = 'http://colodus.sudoc.fr';}
+  
+/*2. Pilon (+ recréation d'exemplaire si besoin)
+javascript:/*ColBU Sciences-06/10/15*/function auth(){jQuery('#login').val("050CX41");jQuery('#pass').val("colBAC114");jQuery('#boutonlog').click();};function SearchPPN(ppn) {var ppn;jQuery(%22input[id*='ppn']%22).val(ppn);document.getElementById('boutonsearch').click();};function CreerEx() {document.getElementById('boutoncrexpl').click();};function FormExemplaire(inv,barcode,BU,loc,cote,PEB) {var inv;var barcode;var BU;var loc;var cote;var PEB;document.getElementById('boutoncrexpl').click();divparent=window.document.getElementById('E9xx');divparent3XX=window.document.getElementById('E3xx');div930=divparent.getElementsByClassName('E930_Div');divid930=div930[0].getAttribute('id');ajLt('record0','E915',null,null,null,null,null,null,null);div915=divparent.getElementsByClassName('E915_Div');divid915=div915[0].getAttribute('id');jQuery(%22input[id*='E915_a']%22).val(inv);ajt('record0','E915_b',null,divid915,null,null,null,null,null);jQuery(%22input[id*='E915_b']%22).val(barcode);ajt('record0','E930_c',null,divid930,null,null,null,null,null);jQuery(%22input[id*='E930_c']%22).val(BU);ajt('record0','E930_d',null,divid930,null,null,null,null,null);jQuery(%22input[id*='E930_d']%22).val(loc);jQuery(%22input[id*='E930_a']%22).val(cote);jQuery(%22select[id*='E930_j']%22).val(PEB);jQuery('#boutonsave').click();};function SupprimerEx(){ var Ex = jQuery('#TabListeExpl tbody tr'); var NbEx = Ex.length; var i = 0; while (i < NbEx) { jQuery('#supexpl').click(); jQuery('button:contains(%22Supprimer%22)')[0].click(); i++; }}
+if (/colodus.sudoc.fr/.test(window.location.href)) 
+	{
+	if (jQuery('div#messConnect').text().length != 0) {location.reload();}
+	else 
+	  { 
+		auth();
+		SearchPPN("135419255");SupprimerEx();
+		SearchPPN("012495883");SupprimerEx();
+		SearchPPN("087392135");SupprimerEx(); FormExemplaire("25163-01-A","0092032829","SCIEN","MAN","628.168 ATT","u");
+		SearchPPN("052887391");SupprimerEx();
+		SearchPPN("056522843");SupprimerEx(); FormExemplaire("21285-33-A","0092021691","SCIEN","BUR1","023 MUL","g");
+	  }
+	}
+	else {window.location.href = 'http://colodus.sudoc.fr';}
+
+
+/*3. Relocalisation-recotation pour 3 PPN et exemplaires*/
+javascript:/*ColLASH-06/10/15*/function auth(){jQuery('#login').val("050CX41");jQuery('#pass').val("colBAC114");jQuery('#boutonlog').click();};function SearchPPN(ppn) {var ppn;jQuery(%22input[id*='ppn']%22).val(ppn);document.getElementById('boutonsearch').click();};function Recotation(cote,codeLocalisation){jQuery(%22input[id*='E930_a']%22).val(cote);jQuery(%22input[id*='E930_d']%22).val(codeLocalisation);jQuery('#boutonsave').click();};function EditerExParCB(CB){jQuery('tr:contains(CB) td a.option_editer').click();}
+if (/colodus.sudoc.fr/.test(window.location.href)) 
+  {
+  if (jQuery('div#messConnect').text().length != 0) {location.reload();}
+  else 
+    { 
+     auth();
+	 SearchPPN("172702798"); function edit1(){jQuery('tr:contains(%22$b0922154010%22) td a.option_editer').click();}edit1(); Recotation(%22411 SZE%22,%22SL2%22);
+	 SearchPPN("082313172"); function edit2(){jQuery('tr:contains(%22$b0922091925%22) td a.option_editer').click();}edit2(); Recotation(%22443.1 RHE%22,%22SL2%22);
+	 SearchPPN("007639929"); function edit3(){jQuery('tr:contains(%22$b0922067436%22) td a.option_editer').click();}edit3(); Recotation(%22447.01 AND%22,%22SL2%22);
+	}
+  }
+  else {window.location.href = 'http://colodus.sudoc.fr';}
